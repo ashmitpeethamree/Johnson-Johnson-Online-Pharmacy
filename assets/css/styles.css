@@ -1,0 +1,14 @@
+:root{--accent:#2b8a3e}
+body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;padding:1rem;background:#f6fbf7;color:#0b2a1a}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:1rem;background:white;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+nav a{margin:0 .5rem;color:var(--accent);text-decoration:none}
+.hero{padding:2rem;background:linear-gradient(90deg,rgba(43,138,62,.06),transparent);border-radius:8px}
+.cta{display:inline-block;margin-top:1rem;padding:.6rem 1rem;background:var(--accent);color:white;border-radius:6px;text-decoration:none}
+form{max-width:480px;margin:1rem 0}
+label{display:block;margin-bottom:.6rem}
+input,select,textarea{width:100%;padding:.5rem;border:1px solid #e6f2ea;border-radius:6px}
+table{width:100%;border-collapse:collapse;margin-top:1rem}
+th,td{padding:.5rem;border:1px solid #e6f2ea;text-align:left}
+.button{display:inline-block;padding:.4rem .7rem;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none}
+.muted{color:#586e5b;font-size:.9rem}
+.badge{background:#e6f2ea;padding:.2rem .4rem;border-radius:6px}
