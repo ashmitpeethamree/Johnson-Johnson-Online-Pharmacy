@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register</title>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script defer src="../assets/js/scripts.js"></script>
+</head>
+<body>
+<h2>Register</h2>
+
+<form id="registerForm" action="../src/auth_register.php" method="post" novalidate>
+
+  <label>Full name
+    <input required name="fullname" type="text" maxlength="100">
+  </label>
+
+  <label>Email
+    <input required name="email" type="email" maxlength="150">
+  </label>
+
+  <label>Password
+    <input required name="password" type="password" minlength="8">
+  </label>
+
+  <label>Role
+    <select name="role" required>
+      <option value="customer">Customer</option>
+      <option value="pharmacist">Pharmacist</option>
+    </select>
+  </label>
+
+  <button type="submit" class="button">Register</button>
+</form>
+
+</body>
+</html>
