@@ -11,13 +11,13 @@ error_reporting(E_ALL);
 session_start();
 require_once __DIR__ . '/config/db.php';
 
-// REQUIRE LOGIN
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../public/login.php");
     exit;
 }
 
-// ONLY ALLOW POST
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     exit("Method Not Allowed");
