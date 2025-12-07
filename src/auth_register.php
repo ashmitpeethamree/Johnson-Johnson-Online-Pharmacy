@@ -23,8 +23,7 @@ if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($passwo
 
 $db = getPDO();
 
-// 👉 FIX: CHECK USING `user_id`? No. We check email only.
-// The only problem earlier was selecting a non-existing column.
+
 $stmt = $db->prepare('SELECT user_id FROM users WHERE email = :email');
 $stmt->execute([':email' => $email]);
 
@@ -32,7 +31,7 @@ if ($stmt->fetch()) {
     die("Email already exists");
 }
 
-// Insert user → match EXACT column names in your DB
+// Insert user , match EXACT column names in your DB
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $db->prepare('INSERT INTO users (name, email, password, role, created_at)
