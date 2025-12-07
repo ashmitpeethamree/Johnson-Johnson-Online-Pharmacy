@@ -1,10 +1,10 @@
 <?php
-// DEBUG (keep while testing)
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Start session BEFORE any output
+
 session_start();
 
 require_once __DIR__ . '/config/db.php';
@@ -30,7 +30,7 @@ if (strlen($pass) < 8) {
 $db = getPDO();
 
 try {
-    // NOTE: MySQL is case-sensitive on some systems (Users vs users)
+    
     $stmt = $db->prepare("
         SELECT user_id, name, email, password AS pwd, role 
         FROM Users
