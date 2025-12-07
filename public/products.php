@@ -1,28 +1,24 @@
 <?php
-// -------------------------------
-// DEBUG (enable while testing)
-// -------------------------------
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// -------------------------------
-// SESSION + DB
-// -------------------------------
+
 session_start();
 require_once __DIR__ . '/../src/config/db.php';
 include 'navbar.php';
 
-// REQUIRE LOGIN
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-// CONNECT DB
+
 $db = getPDO();
 
-// FETCH MEDICINES
+
 $stmt = $db->query("
     SELECT 
         medicine_id,
