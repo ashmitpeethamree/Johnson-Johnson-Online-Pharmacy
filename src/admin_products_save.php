@@ -28,7 +28,7 @@ if ($name === "" || !is_numeric($price) || !is_numeric($stock)) {
     die("Invalid input");
 }
 
-// If product_id exists → update
+// If product_id exists , update
 if (!empty($id)) {
 
     $stmt = $db->prepare("
@@ -45,7 +45,7 @@ if (!empty($id)) {
     ]);
 
 } else {
-    // Otherwise → insert new product
+    // Otherwise , insert new product
     $stmt = $db->prepare("
         INSERT INTO products (name, price, stock, created_at)
         VALUES (:name, :price, :stock, NOW())
