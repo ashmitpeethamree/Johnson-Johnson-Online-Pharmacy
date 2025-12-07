@@ -47,7 +47,7 @@ switch ($action) {
             $stmt = $db->prepare("UPDATE cart SET quantity = quantity - 1 WHERE cart_id = :cid");
             $stmt->execute([':cid' => $cart_id]);
         } else {
-            // qty would become 0 → remove item
+            // qty would become 0 , remove item
             $stmt = $db->prepare("DELETE FROM cart WHERE cart_id = :cid");
             $stmt->execute([':cid' => $cart_id]);
         }
